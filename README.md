@@ -14,9 +14,7 @@ This site provides detailed technical information on Submarine, including inform
 
 ### What makes Submarine different?
 
-Unlike many other payment or subscription solutions available for Shopify, Submarine is designed exclusively for Shopify Plus merchants with 
-
-Submarine follows two design principles in everything it does: Shopify Native and Developer Friendly.
+Unlike many other payment or subscription solutions available for Shopify, Submarine is designed exclusively for Shopify Plus merchants with custom requirements, and is tailored for use by merchants with 
 
 #### Shopify Native
 
