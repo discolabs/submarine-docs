@@ -5,9 +5,10 @@
 ## Learn
 
 * [Platform Architecture](learn/architecture.md)
+* [Data Model](learn/data-model.md)
+* [Payment Methods](learn/payment-support.md)
 * [Hosting and Infrastructure](learn/hosting-and-infrastructure.md)
 * [Security and Compliance](learn/security-and-privacy.md)
-* [Payment Methods](learn/payment-support.md)
 
 ## Build
 

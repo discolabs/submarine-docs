@@ -16,7 +16,7 @@ Tarsnap ensures that data is fully encrypted on our servers before transmission.
 
 ## What's Submarine's Disaster Recovery Plan?
 
-Yes, after a few months we finally found the answer. Sadly, Mike is on vacations right now so I'm afraid we are not able to provide the answer at this point.
+TODO
 
 
 

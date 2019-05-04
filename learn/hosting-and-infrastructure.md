@@ -30,3 +30,9 @@ The way Submarine is architected, any outages on the Submarine side will not pre
 
 To date, Submarine itself has demonstrated five nines reliability and uptime.
 
+## Does Submarine provide a staging or sandbox environment?
+
+**Yes.**
+
+Submarine has a fully-functional staging environment, and we encourage all merchants to set Submarine up on a development or staging Shopify store for testing and development purposes. In the staging environment, sandbox payment provider credentials can be used during testing.
+
