@@ -182,7 +182,7 @@ ID of the currently logged in customer.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="id" type="integer" required=true %}
-ID of the payment method to update.
+ID of the payment method to remove.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
@@ -201,3 +201,140 @@ ID of the payment method to update.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+## Subscription endpoints
+
+{% api-method method="get" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/subscriptions.json" %}
+{% api-method-summary %}
+List subscriptions
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Fetch a list of the current customer's active subscriptions
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="customer\_id" type="integer" required=true %}
+ID of the currently logged in customer.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/subscriptions.json" %}
+{% api-method-summary %}
+Create new subscription
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Create a new subscription for the current customer.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="customer\_id" type="integer" required=true %}
+ID of the currently logged in customer.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="patch" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/subscriptions/{{ id }}.json" %}
+{% api-method-summary %}
+Update existing subscription
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Update an existing subscription belonging to the current customer.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="customer\_id" type="integer" required=true %}
+ID of the currently logged in customer.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="id" type="integer" required=true %}
+ID of the subscription to update.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="delete" host="https://submarine.discolabs.com" path="/api/v1/{{ customer\_id }}/subscriptions/{{ id }}.json" %}
+{% api-method-summary %}
+Delete existing subscription
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Remove an existing subscription belonging to the current customer.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="customer\_id" type="integer" required=true %}
+ID of the currently logged in customer.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="id" type="integer" required=true %}
+ID of the subscription to remove.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
