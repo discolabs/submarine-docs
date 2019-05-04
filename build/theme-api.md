@@ -4,16 +4,16 @@ description: Documentation for the Submarine Theme API.
 
 # Theme API
 
-The Theme API allows you to build bespoke interfaces to allow customers to manage their stored payment methods and manage their subscriptions.
+The Theme API is used to bespoke interfaces for customers to manage stored payment methods and subscriptions.
 
-It's designed to be called from the browser within the context of a customer logged in to their account on a Shopify store.
+It's designed to be called from the browser, within the context of a customer logged in to their account on a Shopify store.
 
 The API follows the [JSON API Specification](https://jsonapi.org/), and provide endpoints for retrieving, creating and updating stored payment methods, subscriptions, and individual subscription orders.
 
-A Javascript client library, Submarine.js, is provided to simplify interaction with the Theme API. This library can be imported into an existing theme development workflow, or included via a `<script>` tag.
+A Javascript client library \(Submarine.js\) is provided by Disco Labs to simplify interaction with the Theme API. This library can be imported into an existing theme development workflow, or included via a `<script>` tag.
 
 {% hint style="info" %}
-Instructions and code examples for using the Submarine.js client library are available from the library's [Github repository](https://github.com/discolabs/submarine-js).
+Instructions and code examples for using the Submarine.js client library are available [on Github](https://github.com/discolabs/submarine-js).
 {% endhint %}
 
 ## Authentication
@@ -89,7 +89,7 @@ ID of the currently logged in customer.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -121,7 +121,7 @@ ID of the currently logged in customer.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -157,7 +157,7 @@ ID of the payment method to update.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -193,7 +193,7 @@ ID of the payment method to remove.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -227,7 +227,7 @@ ID of the currently logged in customer.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -259,7 +259,7 @@ ID of the currently logged in customer.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -295,7 +295,7 @@ ID of the subscription to update.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
@@ -331,10 +331,11 @@ ID of the subscription to remove.
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
