@@ -339,3 +339,79 @@ ID of the subscription to remove.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+## Subscription order endpoints
+
+{% api-method method="get" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/subscriptions/{{ subscription\_id }}/subscription_orders.json" %}
+{% api-method-summary %}
+List subscription orders
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Fetch a list of the subscription orders for the given subscription.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="customer\_id" type="integer" required=true %}
+ID of the currently logged in customer.
+{% endapi-method-parameter %}
+{% api-method-parameter name="subscription\_id" type="integer" required=true %}
+ID of the subscription to retrieve orders for.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```text
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="patch" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/subscriptions/{{ subscription\_id }}/subscription_orders/{{ id }}.json" %}
+{% api-method-summary %}
+Update existing subscription order
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Update an existing subscription order.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="customer\_id" type="integer" required=true %}
+ID of the currently logged in customer.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="subscription\_id" type="integer" required=true %}
+ID of the subscription the subscription order to be updated belongs to.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="id" type="integer" required=true %}
+ID of the subscription order to update.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```text
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
