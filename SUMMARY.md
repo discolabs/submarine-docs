@@ -13,7 +13,7 @@
 ## Build
 
 * [Setup and Configuration](build/setup-and-configuration.md)
-* [Theme API](build/theme-api.md)
+* [Customer API](build/theme-api.md)
 * [Admin API](build/admin-api.md)
 * [Shopify Flow Integration](build/shopify-flow-integration.md)
 

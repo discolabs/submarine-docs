@@ -1,16 +1,16 @@
 ---
-description: Documentation for the Submarine Theme API.
+description: Documentation for the Submarine Customer API.
 ---
 
-# Theme API
+# Customer API
 
-The Theme API is used to bespoke interfaces for customers to manage stored payment methods and subscriptions.
+The Customer API is used to build bespoke interfaces to allow customers to manage their stored payment methods and subscriptions.
 
-It's designed to be called from the browser, within the context of a customer logged in to their account on a Shopify store.
+It's designed to be called from within the context of a customer logged in to their Shopify account, either from a browser or other client \(such as a mobile app\).
 
 The API follows the [JSON API Specification](https://jsonapi.org/), and provide endpoints for retrieving, creating and updating stored payment methods, subscriptions, and individual subscription orders.
 
-A Javascript client library \(Submarine.js\) is provided by Disco Labs to simplify interaction with the Theme API. This library can be imported into an existing theme development workflow, or included via a `<script>` tag.
+A Javascript client library \(Submarine.js\) is provided by Disco Labs to simplify interaction with the Customer API. This library can be imported into an existing theme development workflow, or included via a `<script>` tag.
 
 {% hint style="info" %}
 Instructions and code examples for using the Submarine.js client library are available [on Github](https://github.com/discolabs/submarine-js).
@@ -24,9 +24,11 @@ Requests to the API are authenticated by providing three parameters in the query
 
 * `shop` - the Shopify domain of the current store, eg `example.myshopify.com`;
 * `timestamp` - a UNIX timestamp of when the request was generated;
-* `signature` - a HMAC signature generated from the ID of the customer in question, the `timestamp` value, and a secret key made available to your theme via a shop-level metafield `shop.metafields.submarine.customer_api_secret`.
+* `signature` - a SHA256 HMAC signature generated from the ID of the logged in customer, the `timestamp` value, and a secret key made available to your theme via a shop-level metafield `shop.metafields.submarine.customer_api_secret`.
 
-These values should be generated within your Liquid templates and passed to the Javascript code that will be making calls to the Theme API.
+For Shopify theme, these values should be generated within your Liquid templates and passed to the Javascript code that will be making calls to the Customer API.
+
+For other clients, such as mobile apps, these values should be generated within your application code before making calls.
 
 ### Example generation
 
@@ -39,7 +41,7 @@ These values should be generated within your Liquid templates and passed to the 
 
 <script>
   window.submarine = new Submarine({
-    api_url: "https://submarine.discolabs.com/api/v1",
+    environment: "production",
     authentication: {
       shop: "{{ shop.permanent_domain }}",
       timestamp: "{{ api_timestamp }}",
@@ -60,7 +62,7 @@ GET https://submarine.discolabs.com/api/v1/customers/82500043234/payment_methods
 ```
 
 {% hint style="info" %}
-For brevity, we omit these authentication parameters from all of the endpoint documentation below, but note that they are required for all requests.
+For brevity, we omit these authentication parameters from the endpoint documentation below, but note that they are required for all requests.
 {% endhint %}
 
 ## Payment method endpoints
@@ -341,7 +343,7 @@ ID of the subscription to remove.
 
 ## Subscription order endpoints
 
-{% api-method method="get" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/subscriptions/{{ subscription\_id }}/subscription_orders.json" %}
+{% api-method method="get" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/subscriptions/{{ subscription\_id }}/subscription\_orders.json" %}
 {% api-method-summary %}
 List subscription orders
 {% endapi-method-summary %}
@@ -356,6 +358,7 @@ Fetch a list of the subscription orders for the given subscription.
 {% api-method-parameter name="customer\_id" type="integer" required=true %}
 ID of the currently logged in customer.
 {% endapi-method-parameter %}
+
 {% api-method-parameter name="subscription\_id" type="integer" required=true %}
 ID of the subscription to retrieve orders for.
 {% endapi-method-parameter %}
@@ -376,7 +379,7 @@ ID of the subscription to retrieve orders for.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="patch" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/subscriptions/{{ subscription\_id }}/subscription_orders/{{ id }}.json" %}
+{% api-method method="patch" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/subscriptions/{{ subscription\_id }}/subscription\_orders/{{ id }}.json" %}
 {% api-method-summary %}
 Update existing subscription order
 {% endapi-method-summary %}
@@ -415,3 +418,4 @@ ID of the subscription order to update.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
