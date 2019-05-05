@@ -14,7 +14,7 @@ The Submarine Shopify application is installed into a merchant's store just like
 
 The app includes a merchant-facing interface inside the Shopify admin that allows for the admin management of customer payment methods and customer subscriptions.
 
-The app provides the [Theme API](../build/theme-api.md), the [Admin API](../build/admin-api.md), and the [Shopify Flow Integration](../build/shopify-flow-integration.md).
+The app also provides the [Customer API](../build/customer-api.md), the [Admin API](../build/admin-api.md), and the [Shopify Flow Integration](../build/shopify-flow-integration.md).
 
 ### Payment gateway
 
