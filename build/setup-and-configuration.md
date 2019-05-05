@@ -50,11 +50,15 @@ Disco Labs can implement this customisation directly or provide code examples an
 
 The Shopify theme is customised to support the functionality enabled by Submarine \(eg by capturing customer subscription preferences on the product page or in the checkout\).
 
+No specialised libraries or APIs are needed to develop these customer flows - they can be built using the Liquid, HTML, CSS and Javascript typically used for the development of Shopify themes. Special behaviours \(such as configuring subscription frequencies\) are driven through the use of standard Shopify features like [Line Item Properties](https://help.shopify.com/en/themes/customization/products/features/get-customization-information-for-products) and [Cart Attributes](https://help.shopify.com/en/themes/customization/cart/get-more-information-with-cart-attributes).
+
 The design and implementation of these customisations is typically undertaken by the merchant's in-house development team or third party agency partner with support from Disco Labs.
 
 ### Customer account interface
 
 The customer account section of the merchant's Shopify theme is customised to support customer-facing Submarine functionality such as managing payment methods and subscriptions.
+
+Customer account interfaces are typically built based on the Liquid, HTML, CSS and Javascript already in use for the merchant's Shopify theme, with the addition of an integration point to Submarine's [Customer API](customer-api.md) for the retrieval and management of Submarine-specific data. The [Submarine.js](https://github.com/discolabs.com/submarine-js) client library is provided to make interacting with the Submarine Customer API as easy as possible.
 
 The design and implementation of these customisations is typically undertaken by the merchant's in-house development team or third party agency partner with support from Disco Labs.
 
