@@ -93,33 +93,33 @@ Successfully retrieved a list of payment methods.
 
 ```javascript
 {
-  "data":[
+  "data": [
     {
-      "id":"75199384",
-      "type":"customer_payment_method",
-      "attributes":{
-        "status":"active",
-        "payment_data":{
-          "brand":"Visa",
-          "last4":"4242",
-          "exp_year":2022,
-          "exp_month":1,
-          "processor":"stripe"
+      "id": "75199384",
+      "type": "customer_payment_method",
+      "attributes": {
+        "status": "active",
+        "payment_data": {
+          "brand": "Visa",
+          "last4": "4242",
+          "exp_year": 2022,
+          "exp_month": 1,
+          "processor": "stripe"
         },
-        "payment_method_type":"credit-card",
+        "payment_method_type": "credit-card",
         "authorized_payment_method_id": 825022
       }
     },
     {
-      "id":"75199212",
-      "type":"customer_payment_method",
-      "attributes":{
-        "status":"active",
-        "payment_data":{
-          "email":"customer@example.com",
-          "processor":"braintree"
+      "id": "75199212",
+      "type": "customer_payment_method",
+      "attributes": {
+        "status": "active",
+        "payment_data": {
+          "email": "customer@example.com",
+          "processor": "braintree"
         },
-        "payment_method_type":"paypal",
+        "payment_method_type": "paypal",
         "authorized_payment_method_id": 221099
       }
     }
@@ -151,6 +151,17 @@ ID of the currently logged in customer.
 {% api-method-body-parameters %}
 {% api-method-parameter name="payment\_method" type="object" required=true %}
 Details of the payment method to create.
+
+```javascript
+{  
+  "payment_method":{  
+    "payment_token": "tok_1EWZiTDr1UYLFdK5JKOH5DUy",
+    "payment_method_type": "credit-card",
+    "payment_processor": "stripe",
+    "status": "active"
+  }
+}
+```
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -161,8 +172,25 @@ Details of the payment method to create.
 
 {% endapi-method-response-example-description %}
 
-```text
-
+```javascript
+{  
+  "data": {  
+    "id": "5208432",
+    "type": "customer_payment_method",
+    "attributes": {  
+      "status": "active",
+      "payment_data": {
+        "brand": "Visa",
+        "last4": "4242",
+        "exp_month": 1,
+        "exp_year": 2022,
+        "processor": "stripe"
+      },
+      "payment_method_type": "credit-card",
+      "authorized_payment_method_id": 9012424
+    }
+  }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
