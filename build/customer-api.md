@@ -137,7 +137,7 @@ Create new payment method
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Create a new payment method for the current customer.
+Create a new payment method for the current customer. Body parameters should be wrapped in a payment\_method object.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -149,8 +149,20 @@ ID of the currently logged in customer.
 {% endapi-method-path-parameters %}
 
 {% api-method-body-parameters %}
-{% api-method-parameter name="payment\_method" type="object" required=true %}
-Details of the payment method to create.
+{% api-method-parameter required=true name="payment\_token" type="string" %}
+A payment token retrieved from a payment processor's JS SDK.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="payment\_method\_type" type="string" required=true %}
+The type of payment method. One of "credit-card", "paypal" or "sepa".
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="payment\_processor" type="string" required=true %}
+The payment processor. Either "stripe" or "braintree".
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="status" type="string" required=true %}
+Status of the new method. Should be "active".
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -180,6 +192,70 @@ Details of the payment method to create.
     }
   }
 }
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/payment\_methods.json" %}
+{% api-method-summary %}
+
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="string" required=true %}
+A payment token retrieved from a payment processor's JS SDK.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/payment\_methods.json" %}
+{% api-method-summary %}
+
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="" type="string" required=true %}
+A payment token retrieved from a payment processor's JS SDK.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
