@@ -88,11 +88,43 @@ ID of the currently logged in customer.
 {% api-method-response %}
 {% api-method-response-example httpCode=200 %}
 {% api-method-response-example-description %}
-
+Successfully retrieved a list of payment methods.
 {% endapi-method-response-example-description %}
 
-```text
-
+```javascript
+{
+  "data":[
+    {
+      "id":"75199384",
+      "type":"customer_payment_method",
+      "attributes":{
+        "status":"active",
+        "payment_data":{
+          "brand":"Visa",
+          "last4":"4242",
+          "exp_year":2022,
+          "exp_month":1,
+          "processor":"stripe"
+        },
+        "payment_method_type":"credit-card",
+        "authorized_payment_method_id": 825022
+      }
+    },
+    {
+      "id":"75199212",
+      "type":"customer_payment_method",
+      "attributes":{
+        "status":"active",
+        "payment_data":{
+          "email":"customer@example.com",
+          "processor":"braintree"
+        },
+        "payment_method_type":"paypal",
+        "authorized_payment_method_id": 221099
+      }
+    }
+  ]
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -115,6 +147,12 @@ Create a new payment method for the current customer.
 ID of the currently logged in customer.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="payment\_method" type="object" required=true %}
+Details of the payment method to create.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
