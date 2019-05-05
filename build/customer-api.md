@@ -26,7 +26,7 @@ Requests to the API are authenticated by providing three parameters in the query
 * `timestamp` - a UNIX timestamp of when the request was generated;
 * `signature` - a SHA256 HMAC signature generated from the ID of the logged in customer, the `timestamp` value, and a secret key made available to your theme via a shop-level metafield `shop.metafields.submarine.customer_api_secret`.
 
-For Shopify theme, these values should be generated within your Liquid templates and passed to the Javascript code that will be making calls to the Customer API.
+For Shopify themes, these values should be generated within your Liquid templates and passed to the Javascript code that will be making calls to the Customer API.
 
 For other clients, such as mobile apps, these values should be generated within your application code before making calls.
 
