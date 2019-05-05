@@ -10,7 +10,7 @@ Submarine is a tokenised payment platform that allows Shopify Plus merchants to 
 * Pre-sales;
 * Crowdfunding;
 * Saved payment methods; and
-* One-click purchases.
+* One-click purchases and upsells.
 
 It's developed by [Disco Labs](https://www.discolabs.com), based on their years of experience working with enterprise organisations with complex requirements, and is presently deployed at scale for a number of large Shopify Plus merchants.
 

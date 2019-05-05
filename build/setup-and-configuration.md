@@ -6,11 +6,13 @@ description: The process for installing and configuring Submarine on a Shopify P
 
 This page walks through the steps that will be undertaken to set up and configure Submarine on a Shopify store. All new Submarine installations are currently managed by Disco Labs, so they'll be able to provide support and guidance during this process.
 
+Typically, the below process will first be undertaken on a staging store prior for development and testing prior to a production deployment.
+
 ## Installation
 
 ### Shopify applications
 
-Disco Labs will request collaborator access to each Shopify store Submarine is to be used on \(both staging and production\).
+Disco Labs will request collaborator access to each Shopify store Submarine is to be used on.
 
 Once granted, the Submarine, Shopify Script Editor and Shopify Flow applications will be installed on each store \(if not already installed\).
 
@@ -36,13 +38,23 @@ Disco Labs will configure API credentials for the merchant's selected payment pr
 
 The merchant's active Payment Gateway Shopify Script will be updated to include logic to show or hide the Submarine payment gateway based on the type of order going through the Shopify checkout.
 
-A template @TODO
-
 ## Theme customisation
 
+### Checkout customisation
 
+A small customisation will be applied at the payment method step to properly display the Submarine payment gateway options during checkout.
 
+Disco Labs can implement this customisation directly or provide code examples and instructions for the merchant or third party partner to install.
 
+### Customer purchase flow
 
+The Shopify theme is customised to support the functionality enabled by Submarine \(eg by capturing customer subscription preferences on the product page or in the checkout\).
 
+The design and implementation of these customisations is typically undertaken by the merchant's in-house development team or third party agency partner with support from Disco Labs.
+
+### Customer account interface
+
+The customer account section of the merchant's Shopify theme is customised to support customer-facing Submarine functionality such as managing payment methods and subscriptions.
+
+The design and implementation of these customisations is typically undertaken by the merchant's in-house development team or third party agency partner with support from Disco Labs.
 

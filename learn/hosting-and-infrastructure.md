@@ -8,7 +8,7 @@ description: Information about the hardware and infrastructure behind Submarine.
 
 **On Digital Ocean in the United States.**
 
-Our infrastructure is provided by Digital Ocean, with availability regions within the United States. Locating our servers in the United States was a decision premised on proximity to Shopify's servers and to the majority of our merchants' customer bases.
+Our infrastructure is provided by Digital Ocean, with availability regions within the United States. Locating our servers in the United States was a decision made based on proximity to Shopify's servers and to the majority of our merchants' customer bases.
 
 We have the ability to deploy Submarine to alternate regions or to in-house infrastructure if merchants have specific legal or compliance needs.
 
@@ -35,4 +35,10 @@ To date, Submarine itself has demonstrated five nines reliability and uptime.
 **Yes.**
 
 Submarine has a fully-functional staging environment, and we encourage all merchants to set Submarine up on a development or staging Shopify store for testing and development purposes. In the staging environment, sandbox payment provider credentials can be used during testing.
+
+## Can Submarine scale?
+
+**Yes - we've handled high traffic launch events in the past.**
+
+Submarine's architecture makes it well-suited to handle high traffic events and merchants processing large volumes. Unlike some other payment or subscription solutions, Submarine is integrated natively into the Shopify checkout, which is able to automatically scale to handle very high traffic volumes, even in cases of flash sale or launch events.
 

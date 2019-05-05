@@ -137,7 +137,7 @@ Create new payment method
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Create a new payment method for the current customer. Body parameters should be wrapped in a `payment_method` object.
+Create a new payment method for the current customer. Body parameters should be passed as a JSON object wrapped in a `payment_method` namespace.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -198,113 +198,13 @@ Status of the new method. Should be `active`.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/payment\_methods.json" %}
-{% api-method-summary %}
-
-{% endapi-method-summary %}
-
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
-A payment token retrieved from a payment processor's JS SDK.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="post" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/payment\_methods.json" %}
-{% api-method-summary %}
-
-{% endapi-method-summary %}
-
-{% api-method-description %}
-
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=true %}
-A payment token retrieved from a payment processor's JS SDK.
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="patch" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/payment\_methods/{{ id }}.json" %}
-{% api-method-summary %}
-Update existing payment method
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Update an existing payment method belonging to the current customer.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="customer\_id" type="integer" required=true %}
-ID of the currently logged in customer.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="id" type="integer" required=true %}
-ID of the payment method to update.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
-
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
 {% api-method method="delete" host="https://submarine.discolabs.com" path="/api/v1/{{ customer\_id }}/payment\_methods/{{ id }}.json" %}
 {% api-method-summary %}
-Delete existing payment method
+Remove existing payment method
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Remove an existing payment method belonging to the current customer.
+Remove \(disable\) an existing payment method belonging to the current customer.
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -326,8 +226,25 @@ ID of the payment method to remove.
 
 {% endapi-method-response-example-description %}
 
-```text
-
+```javascript
+{  
+  "data": {  
+    "id": "5208432",
+    "type": "customer_payment_method",
+    "attributes": {  
+      "status": "disabled",
+      "payment_data": {  
+        "brand": "Visa",
+        "last4": "1111",
+        "exp_year": 2020,
+        "exp_month": 1,
+        "processor": "stripe"
+      },
+      "payment_method_type": "credit-card",
+      "authorized_payment_method_id": 9012424
+    }
+  }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -360,40 +277,175 @@ ID of the currently logged in customer.
 
 {% endapi-method-response-example-description %}
 
-```text
-
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-{% api-method method="post" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/subscriptions.json" %}
-{% api-method-summary %}
-Create new subscription
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Create a new subscription for the current customer.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="customer\_id" type="integer" required=true %}
-ID of the currently logged in customer.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
-
+```javascript
+{
+  "data": [
+    {
+      "id": "63594867",
+      "type": "subscription",
+      "attributes": {
+        "status": "active",
+        "created_at": "2019-05-01T05:14:27.441Z",
+        "cancelled_at": null,
+        "paused_at": null,
+        "note": "",
+        "customer_name": "Jane Doe",
+        "customer_email": "jane@example.com",
+        "billing_address": {
+          "zip": "3000",
+          "city": "Melbourne",
+          "name": "Jane Doe",
+          "phone": null,
+          "company": null,
+          "country": "Australia",
+          "address1": "100 Main Street",
+          "address2": "",
+          "latitude": null,
+          "province": "Victoria",
+          "last_name": "Doe",
+          "longitude": null,
+          "first_name": "Jane",
+          "country_code": "AU",
+          "province_code": "VIC"
+        },
+        "frequency": "42_days",
+        "frequency_human": "Every 6 weeks",
+        "line_items": {
+          "data": [
+            {
+              "id": "40850",
+              "type": "subscription_line_item",
+              "attributes": {
+                "product_id": 1506703278149,
+                "variant_id": 13587185303621,
+                "quantity": 5,
+                "price": "8.90",
+                "properties": null,
+                "title": "Beauty Berry Porridge"
+              }
+            },
+            {
+              "id": "40851",
+              "type": "subscription_line_item",
+              "attributes": {
+                "product_id": 1506738864197,
+                "variant_id": 13587544539205,
+                "quantity": 1,
+                "price": "15.90",
+                "properties": [
+                  {
+                    "name": "_applied_subscription_discount",
+                    "value": "135"
+                  }
+                ],
+                "title": "Kids Blendies"
+              }
+            }
+          ]
+        },
+        "shipping_method": {
+          "data": {
+            "id": "84573",
+            "type": "subscription_shipping_method",
+            "attributes": {
+              "note": null,
+              "shipping_rates": [
+                {
+                  "id": 851467108421,
+                  "code": "Standard Shipping (3-6 days)",
+                  "phone": null,
+                  "price": "0.00",
+                  "title": "Standard Shipping (3-6 days)",
+                  "source": "shopify",
+                  "discounted_price": "0.00"
+                }
+              ],
+              "shipping_address": {
+                "first_name": "Jane",
+                "last_name": "Doe",
+                "address1": "100 Main Street",
+                "address2": "",
+                "city": "Melbourne",
+                "zip": "3000",
+                "province": "Victoria",
+                "province_code": "VIC",
+                "country": "Australia"
+              }
+            }
+          }
+        },
+        "payment_method": {
+          "data": {
+            "id": "349580",
+            "type": "customer_payment_method",
+            "attributes": {
+              "status": "active",
+              "payment_data": {
+                "brand": "Visa",
+                "last4": "4242",
+                "exp_year": 2024,
+                "exp_month": 4,
+                "processor": "stripe"
+              },
+              "payment_method_type": "credit-card",
+              "authorized_payment_method_id": 235252
+            }
+          }
+        },
+        "next_scheduled_order": {
+          "data": {
+            "id": "12521",
+            "type": "subscription_order",
+            "attributes": {
+              "status": "scheduled",
+              "shipping_rate": {},
+              "scheduled_at": "2019-05-18T00:00:00.000Z",
+              "processed_at": null,
+              "skipped_at": null,
+              "cancelled_at": null,
+              "order_id": null,
+              "sequential_id": 2,
+              "shopify_url": "#",
+              "order_line_items": {
+                "data": [
+                  {
+                    "id": "35625",
+                    "type": "subscription_order_line_item",
+                    "attributes": {
+                      "subscription_order_id": 12521,
+                      "product_id": 1506703278149,
+                      "variant_id": 13587185303621,
+                      "quantity": 5,
+                      "price": "8.90",
+                      "properties": []
+                    }
+                  },
+                  {
+                    "id": "35624",
+                    "type": "subscription_order_line_item",
+                    "attributes": {
+                      "subscription_order_id": 12521,
+                      "product_id": 1506738864197,
+                      "variant_id": 13587544539205,
+                      "quantity": 1,
+                      "price": "15.90",
+                      "properties": [
+                        {
+                          "name": "_applied_subscription_discount",
+                          "value": "135"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
