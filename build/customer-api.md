@@ -138,6 +138,17 @@ Create new payment method
 
 {% api-method-description %}
 Create a new payment method for the current customer. Body parameters should be wrapped in a payment\_method object.
+
+```javascript
+{  
+  "payment_method":{  
+    "payment_token":"tok_1EWZiTDr1UYLFdK5JKOH5DUy",
+    "payment_method_type":"credit-card",
+    "payment_processor":"stripe",
+    "status":"active"
+  }
+}
+```
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -154,15 +165,15 @@ A payment token retrieved from a payment processor's JS SDK.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="payment\_method\_type" type="string" required=true %}
-The type of payment method. One of "credit-card", "paypal" or "sepa".
+The type of payment method. One of `credit-card`, `paypal` or `sepa`.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="payment\_processor" type="string" required=true %}
-The payment processor. Either "stripe" or "braintree".
+The payment processor. Either `stripe` or `braintree`.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="status" type="string" required=true %}
-Status of the new method. Should be "active".
+Status of the new method. Should be `active`.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
