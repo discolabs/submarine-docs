@@ -151,17 +151,6 @@ ID of the currently logged in customer.
 {% api-method-body-parameters %}
 {% api-method-parameter name="payment\_method" type="object" required=true %}
 Details of the payment method to create.
-
-```javascript
-{  
-  "payment_method":{  
-    "payment_token": "tok_1EWZiTDr1UYLFdK5JKOH5DUy",
-    "payment_method_type": "credit-card",
-    "payment_processor": "stripe",
-    "status": "active"
-  }
-}
-```
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
