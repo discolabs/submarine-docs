@@ -137,18 +137,7 @@ Create new payment method
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Create a new payment method for the current customer. Body parameters should be wrapped in a payment\_method object.
-
-```javascript
-{  
-  "payment_method":{  
-    "payment_token":"tok_1EWZiTDr1UYLFdK5JKOH5DUy",
-    "payment_method_type":"credit-card",
-    "payment_processor":"stripe",
-    "status":"active"
-  }
-}
-```
+Create a new payment method for the current customer. Body parameters should be wrapped in a `payment_method` object.
 {% endapi-method-description %}
 
 {% api-method-spec %}
