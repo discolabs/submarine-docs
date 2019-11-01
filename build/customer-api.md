@@ -198,7 +198,7 @@ Status of the new method. Should be `active`.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="https://submarine.discolabs.com" path="/api/v1/{{ customer\_id }}/payment\_methods/{{ id }}.json" %}
+{% api-method method="delete" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/payment\_methods/{{ id }}.json" %}
 {% api-method-summary %}
 Remove existing payment method
 {% endapi-method-summary %}
@@ -488,7 +488,7 @@ ID of the subscription to update.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="https://submarine.discolabs.com" path="/api/v1/{{ customer\_id }}/subscriptions/{{ id }}.json" %}
+{% api-method method="delete" host="https://submarine.discolabs.com" path="/api/v1/customers/{{ customer\_id }}/subscriptions/{{ id }}.json" %}
 {% api-method-summary %}
 Delete existing subscription
 {% endapi-method-summary %}
