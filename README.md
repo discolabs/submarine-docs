@@ -18,11 +18,11 @@ This site provides detailed technical information on Submarine, including inform
 
 ## What makes Submarine different?
 
-Unlike many other payment or subscription solutions available for Shopify, Submarine is designed exclusively for Shopify Plus merchants with custom requirements, and is tailored for use by merchants with 
+Unlike many other payment or subscription solutions available for Shopify, Submarine is designed exclusively for Shopify Plus merchants with custom requirements.
 
 ### Shopify Native
 
-Wherever possible, we leverage Shopify's native functionality, rather than replacing or duplicating it.This minimises the footprint of our application, but also ensures maximum compatibility with native Shopify features like checkout customisations, Shopify Scripts, discount codes, gift cards, and Shopify Flow.
+Wherever possible, we leverage Shopify's native functionality, rather than replacing or duplicating it. This minimises the footprint of our application, but also ensures maximum compatibility with native Shopify features like checkout customisations, Shopify Scripts, discount codes, gift cards, and Shopify Flow.
 
 It also ensures greater compatibility with other third-party solutions which may be integrated into a merchant's Shopify store.
 
@@ -31,6 +31,10 @@ It also ensures greater compatibility with other third-party solutions which may
 Because Submarine is designed for situations where bespoke development is required, we aim to provide developers with as much information as possible about how Submarine works, and then get out of their way.
 
 The Submarine application does not add any Javascript to a merchant's storefront, or automate or require any changes to Liquid templates. We simply provide documentation on integration points and access to open-source libraries that can be pulled into custom development workflows and adapted within each merchant's theme.
+
+### Tailored for Merchants
+
+Submarine will never be a "one-click install" type of application - but we see that as a virtue, not a weakness. We have a direct, one to one relationship with everyone using the platform and as a result are able to ensure that Submarine adapts to meet the needs of merchants, not the other way around.
 
 ## Key advantages
 

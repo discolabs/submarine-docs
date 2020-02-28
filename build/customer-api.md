@@ -32,8 +32,7 @@ For other clients, such as mobile apps, these values should be generated within 
 
 ### Example generation
 
-{% code-tabs %}
-{% code-tabs-item title="accounts.liquid" %}
+{% code title="accounts.liquid" %}
 ```markup
 {% assign api_timestamp = 'now' | date: '%s' %}
 {% assign api_data = customer.id | append: ':' | append: api_timestamp %}
@@ -50,8 +49,7 @@ For other clients, such as mobile apps, these values should be generated within 
   });
 </script>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### Example request
 

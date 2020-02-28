@@ -20,11 +20,15 @@ Apple Pay and Google Pay payment methods are conditionally supported.
 
 Credit card and SEPA Direct Debit payment methods are fully supported.
 
-## In development
-
 ### Cybersource
 
-Credit card payment method support is in development.
+Credit card payment methods are fully supported.
+
+### Komoju
+
+All payment methods supported by the [Komoju Multi-Pay Widget](https://docs.komoju.com/en/multipay/overview/) are supported.
+
+## In development
 
 ### Payflow Pro
 

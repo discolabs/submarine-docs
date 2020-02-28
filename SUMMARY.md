@@ -15,4 +15,5 @@
 * [Customer API](build/customer-api.md)
 * [Admin API](build/admin-api.md)
 * [Shopify Flow Integration](build/shopify-flow-integration.md)
+* [Technical FAQ](build/technical-faq.md)
 

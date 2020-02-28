@@ -22,6 +22,8 @@ In order to integrate tightly with the existing Shopify checkout, Submarine prov
 
 Logic is applied to direct all customer checkouts requiring tokenised payment functionality through the Submarine payment gateway, which in turn supports each of the payment methods configured by the merchant.
 
+Being integrated as a payment gateway \(unlike other tokenisation solutions\) means that refunds can be managed directly through the Shopify Admin or the Shopify Refunds API with no additional effort.
+
 ### Theme integration
 
 While Submarine does not strictly require any theme customisations to function, in order to take full advantage of its functionality changes to the merchant's theme will be required. These changes will likely include:
