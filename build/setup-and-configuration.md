@@ -52,6 +52,8 @@ The Shopify theme is customised to support the functionality enabled by Submarin
 
 No specialised libraries or APIs are needed to develop these customer flows - they can be built using the Liquid, HTML, CSS and Javascript typically used for the development of Shopify themes. Special behaviours \(such as configuring subscription frequencies\) are driven through the use of standard Shopify features like [Line Item Properties](https://help.shopify.com/en/themes/customization/products/features/get-customization-information-for-products) and [Cart Attributes](https://help.shopify.com/en/themes/customization/cart/get-more-information-with-cart-attributes).
 
+Documentation on supported line item properties and cart attributes is available on the [Theme Integration](theme-integration.md) page.
+
 The design and implementation of these customisations is typically undertaken by the merchant's in-house development team or third party agency partner with support from Disco Labs.
 
 ### Customer account interface
