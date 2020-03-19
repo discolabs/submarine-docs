@@ -60,7 +60,7 @@ The design and implementation of these customisations is typically undertaken by
 
 The customer account section of the merchant's Shopify theme is customised to support customer-facing Submarine functionality such as managing payment methods and subscriptions.
 
-Customer account interfaces are typically built based on the Liquid, HTML, CSS and Javascript already in use for the merchant's Shopify theme, with the addition of an integration point to Submarine's [Customer API](customer-api.md) for the retrieval and management of Submarine-specific data. The [Submarine.js](https://github.com/discolabs.com/submarine-js) client library is provided to make interacting with the Submarine Customer API as easy as possible.
+Customer account interfaces are typically built based on the Liquid, HTML, CSS and Javascript already in use for the merchant's Shopify theme, with the addition of an integration point to Submarine's [Customer API](customer-api.md) for the retrieval and management of Submarine-specific data. The [Submarine.js](https://github.com/discolabs/submarine-js) client library is provided to make interacting with the Submarine Customer API as easy as possible.
 
 The design and implementation of these customisations is typically undertaken by the merchant's in-house development team or third party agency partner with support from Disco Labs.
 
