@@ -38,6 +38,30 @@ A subscription order is upcoming for a customer.
 | Total price | number | The total price of the upcoming order \(in cents\). |
 | Action URL | url | A URL the customer can follow to review their order. |
 
+### Customer first subscription
+
+A customer created their first subscription.
+
+#### Properties
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| Customer email | email | The email address of the customer. |
+
+### Upcoming card expiry
+
+A stored credit card is expiring soon.
+
+#### Properties
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| Customer | customer |  |
+| Type of card | string | The brand of credit card \(e.g. "visa"\). |
+| Last four digits | string | Last four digits of the credit card. |
+| Expiry date | string | The expiry date of the credit card \(in ISO8601 format\). |
+| Action URL | url | A URL the customer can follow to update their payment details. |
+
 ## Flow actions
 
 ### Update customer subscription status
