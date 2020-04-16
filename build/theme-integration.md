@@ -22,11 +22,11 @@ Submarine uses a combination of cart-level attributes, line item-level propertie
 
 ### Cart-level attributes
 
-#### Subscription frequency \(required\)
+#### Subscription frequency \(conditionally optional\)
 
-You _must_ define a subscription frequency as a cart-level attribute to trigger Submarine's subscription behaviour.
+A subscription frequency must be defined on an order to trigger Submarine's subscription behaviour. It can either be defined as a cart-level attribute or as a line-item property. 
 
-The name of the frequency cart-level attribute is `_subscription_frequency`.
+The name of the frequency cart-level attribute is `_subscription_frequency`. When defined at the cart level, the subscription will apply to all subscription items in the cart.
 
 Possible values for the cart-level attribute are a magnitude and a unit, separated by an underscore - for example, `7_days`, `3_months`, or `1_year`.
 
@@ -36,26 +36,25 @@ Any other cart-level attributes will be persisted on future subscription orders 
 
 ### Line item-level attributes
 
-#### Subscription flag \(required, depending on configuration\)
+#### Line item subscription frequency \(conditionally optional\)
 
-Submarine offers three subscription line item configuration modes, depending on merchant requirements:
+If you'd like to define subscription frequencies at the line-item level, you can do that with a line-item property.
 
-* If a subscription frequency is present at the cart level, include all line items in the resulting subscription;
-* If a subscription frequency is present at the cart level, only include line items with a line item property of `_subscription_line_item` set to `true` in the resulting subscription;
-* If a subscription frequency is present at the cart level, include all line items other than those with a line item property of `_subscription_line_item` set to `false` in the resulting subscription.
-
-These options allow you to easily create subscriptions with "mixed carts" - that is, some subscription items and some one-off items.
-
-#### Line item subscription frequency \(optional\)
-
-If you'd like to override the cart-level subscription frequency for an individual line item, you can do that with a line item-level property.
-
-The name of the frequency line item-level property is `_subscription_frequency`.
+The name of the frequency line-item property is `_subscription_frequency`.
 
 The possible values are the same as for the cart-level frequency attribute.
 
+#### Subscription flag \(required, depending on configuration\)
+
+Submarine offers two subscription line item configuration modes, depending on merchant requirements:
+
+* If a subscription frequency is present at the cart level, include all line items in the resulting subscription;
+* If a subscription frequency is present at the cart or item level, only include line items with a line-item property of `_subscription_line_item` set to `true` in the resulting subscription.
+
+These options allow you to easily create subscriptions with "mixed carts" - that is, some subscription items and some one-off items.
+
 {% hint style="info" %}
-Submarine will group line items by their frequency when creating subscriptions - so if your initial order has multiple subscription frequencies defined on different line items, multiple subscriptions \(one per frequency group\) will be created.
+Submarine can be configured to either group line items by their frequency when creating subscriptions, or create single-item subscriptions for each subscription item in the cart.
 {% endhint %}
 
 
