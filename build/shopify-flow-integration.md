@@ -62,6 +62,28 @@ A stored credit card is expiring soon.
 | Expiry date | string | The expiry date of the credit card \(in ISO8601 format\). |
 | Action URL | url | A URL the customer can follow to update their payment details. |
 
+### Items removed from subscription \(beta\)
+
+One or more items have been removed from a subscription.
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| Customer | customer |  |
+| Reason | string | The reason for the removal. |
+| Total price | number | The revised price of the subscription order \(in cents\). |
+| Variant IDs | string | A comma-separated list of Shopify variant IDs that were removed. |
+| Action URL | url | A URL the customer can follow to review the subscription. |
+
+### Subscription cancelled \(beta\)
+
+A subscription has been cancelled by Submarine.
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| Customer | customer |  |
+| Reason | string | The reason for the cancellation. |
+| Action URL | url | A URL the customer can follow to review the subscription. |
+
 ## Flow actions
 
 ### Update customer subscription status
