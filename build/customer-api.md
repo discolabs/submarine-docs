@@ -470,6 +470,12 @@ ID of the currently logged in customer.
 ID of the subscription to update.
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="subscription" type="object" required=true %}
+An object containing the updates to apply.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -480,6 +486,61 @@ ID of the subscription to update.
 
 ```text
 
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="" path="/api/v1/customers/{{ customer\_id }}/subscriptions/bulk\_update.json" %}
+{% api-method-summary %}
+Bulk update existing subscriptions
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Update multiple existing subscriptions for the current customer in a single API call. Currently, only the payment method linked to the subscription can be updated in bulk.
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="customer\_id" type="integer" required=true %}
+ID of the currently logged in customer.
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+
+{% api-method-body-parameters %}
+{% api-method-parameter name="bulk\_update" type="object" required=true %}
+An object containing details of the bulk update to be performed. The `bulk_update` object has two attributes: `subscription_ids`, a list of the subscriptions that should be updated, and `subscription`, which is an object containing the updates to apply.
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+  "data": {
+    "id": "816b5f28-0a79-42a0-a69e-5ae37d06821c",
+    "type": "bulk_update_subscriptions_result",
+    "attributes": {
+      "successes": {
+        "data": [
+          ...a list of updated subscription objects...
+        ]
+      },
+      "failures": {
+        "data": [
+          ...a list of subscription objects that failed to update...
+        ]
+      }
+    }
+  }  
+}        
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
