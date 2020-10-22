@@ -30,6 +30,18 @@ The name of the frequency cart-level attribute is `_subscription_frequency`. Whe
 
 Possible values for the cart-level attribute are a magnitude and a unit, separated by an underscore - for example, `7_days`, `3_months`, or `1_year`.
 
+#### Opt-in for all line items \(optional\)
+
+When all items in a cart should be part of a subscription, it can sometimes be more convenient to flag that once, at the cart level, rather than individually for each line item.
+
+The `_include_all_items_in_subscription` cart-level attribute serves this purpose. When present, there is no need to include any`_subscription_line_item` line-item proiperties - instead, all of the carts items will be automatically included in the subscription.
+
+#### Push back date of first subscription order \(optional\)
+
+Submarine's default behaviour is to start the subscription from the time of the original Shopify order. So, if the frequency is set to every one week and the order was placed on January 2nd, the first subscription order would be generated on the 9th, the second on the 16th, and so on.
+
+Sometimes, merchants may want to delay the start of the subscription, which can be done via the `_submarine_initial_scheduled_at` cart-level attribute. This should be set to ISO 8601-formatted time that the first subscription order should be generated on, e.g. `2020-10-22T12:00:00Z`.
+
 #### Other attributes
 
 Any other cart-level attributes will be persisted on future subscription orders if they are whitelisted by the Submarine configuration.
