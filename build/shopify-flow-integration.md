@@ -64,7 +64,7 @@ A stored credit card is expiring soon.
 
 ### Items removed from subscription \(beta\)
 
-One or more items have been removed from a subscription.
+One or more items have been removed from a subscription, independently of any customer activity \(e.g. a subscription product has been unpublished or deleted\).
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
@@ -76,12 +76,26 @@ One or more items have been removed from a subscription.
 
 ### Subscription cancelled \(beta\)
 
-A subscription has been cancelled by Submarine.
+A subscription has been cancelled by Submarine, independently of any customer activity \(e.g. all subscription products have been unpublished or deleted\).
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | Customer | customer |  |
 | Reason | string | The reason for the cancellation. |
+| Action URL | url | A URL the customer can follow to review the subscription. |
+
+### Subscription status changed \(beta\)
+
+The status of a subscription has changed, by the customer, the merchant or Submarine.
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| Customer | customer |  |
+| Subscription ID | string | The Submarine subscription ID. |
+| Reason | string | The reason for the change in status. |
+| Previous status | string | The previous status of the subscription, e.g. 'active'. |
+| Updated status | string | The updated status of the subscription, e.g. 'paused'. |
+| Active subscription count | number | The current number of active subscriptions the customer has. |
 | Action URL | url | A URL the customer can follow to review the subscription. |
 
 ## Flow actions
