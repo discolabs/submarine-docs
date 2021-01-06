@@ -86,7 +86,7 @@ A subscription has been cancelled by Submarine, independently of any customer ac
 
 ### Subscription status changed \(beta\)
 
-The status of a subscription has changed, by the customer, the merchant or Submarine.
+The status of a subscription has been changed, by the customer, the merchant or Submarine.
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
@@ -97,6 +97,22 @@ The status of a subscription has changed, by the customer, the merchant or Subma
 | Updated status | string | The updated status of the subscription, e.g. 'paused'. |
 | Active subscription count | number | The current number of active subscriptions the customer has. |
 | Action URL | url | A URL the customer can follow to review the subscription. |
+
+### Subscription-item status changed \(beta\)
+
+The status of an individual subscription item has been changed, by the customer, the merchant or Submarine.
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| Customer | customer |  |
+| Product | product |  |
+| Variant ID | string | The ID of the Shopify variant. |
+| SKU | string | The SKU of the Shopify variant. |
+| Reason | string | The reason for the change in status. |
+| Previous status | string | The previous status of the subscription. |
+| Updated status | string | The updated status of the subscription. |
+| Active subscription count | number | The current number of active subscriptions the customer has for the item. |
+| Action URL | url | A URL the customer can follow to review their subscriptions. |
 
 ## Flow actions
 
